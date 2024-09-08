@@ -51,6 +51,8 @@ li {
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #eee;
+  transition: all 0.3s ease; /* Animação suave */
+  opacity: 1;
 }
 
 li.completed span {
@@ -58,9 +60,52 @@ li.completed span {
   color: gray;
 }
 
+li:hover {
+  background-color: #f4f4f4;
+}
+
+li form {
+  display: flex;
+  justify-content: space-between;
+}
+
+li form input {
+  flex: 1;
+  margin-right: 10px;
+}
+
 li button {
   background-color: #ff4d4d;
   color: white;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
+}
+
+li.removing {
+  opacity: 0; /* Faz com que o ítem desapareça gradualmente */
+  transform: translateX(-100%); /* Move o item para a esquerda */
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background-color: #0056b3;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
 }
